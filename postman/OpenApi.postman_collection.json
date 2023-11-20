@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "0af67bac-79fa-40a0-a1c7-8403a957fc1b",
+		"name": "OpenApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27530454"
+	},
+	"item": [
+		{
+			"name": "42",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with properties\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object').that.has.all.keys('text', 'number', 'found', 'type');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response properties have correct types\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.text).to.be.a('string');\r",
+							"    pm.expect(jsonData.number).to.be.a('number');\r",
+							"    pm.expect(jsonData.found).to.be.a('boolean');\r",
+							"    pm.expect(jsonData.type).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Config-Token",
+						"value": "myroot",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://numbersapi.com/42?json",
+					"protocol": "http",
+					"host": [
+						"numbersapi",
+						"com"
+					],
+					"path": [
+						"42"
+					],
+					"query": [
+						{
+							"key": "json",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Randon",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with date, text, number, found, and type properties\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object').that.includes.all.keys('date', 'text', 'number', 'found', 'type');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Date is a string\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.date).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Text is a string\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.text).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Number is a number\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.number).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Found is a boolean\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.found).to.be.a('boolean');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Type is a string\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.type).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://numbersapi.com/random/year?json",
+					"protocol": "http",
+					"host": [
+						"numbersapi",
+						"com"
+					],
+					"path": [
+						"random",
+						"year"
+					],
+					"query": [
+						{
+							"key": "json",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23515",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with text, number, found, and type properties\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response).to.be.an('object').that.has.all.keys('text', 'number', 'found', 'type');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response text is a string\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.text).to.be.a('string');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response number is a number\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.number).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response found is a boolean\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.found).to.be.a('boolean');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response type is a string\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.type).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://numbersapi.com/23515/year?json",
+					"protocol": "http",
+					"host": [
+						"numbersapi",
+						"com"
+					],
+					"path": [
+						"23515",
+						"year"
+					],
+					"query": [
+						{
+							"key": "json",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11/20/date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object\", function () {\r",
+							"    pm.expect(pm.response.json()).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains the 'text' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('text');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains the 'year' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('year');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains the 'number' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('number');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains the 'found' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('found');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains the 'type' property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('type');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://numbersapi.com/11/20/date?json",
+					"protocol": "http",
+					"host": [
+						"numbersapi",
+						"com"
+					],
+					"path": [
+						"11",
+						"20",
+						"date"
+					],
+					"query": [
+						{
+							"key": "json",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "id=146",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test for response status code is 200\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Test for response to be an object\r",
+							"pm.test(\"Response is an object\", function () {\r",
+							"    pm.expect(pm.response.json()).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"// Test for response to have properties\r",
+							"pm.test(\"Response has properties\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('id');\r",
+							"    pm.expect(jsonData).to.have.property('name');\r",
+							"    pm.expect(jsonData).to.have.property('status');\r",
+							"    pm.expect(jsonData).to.have.property('species');\r",
+							"    pm.expect(jsonData).to.have.property('type');\r",
+							"    pm.expect(jsonData).to.have.property('gender');\r",
+							"    pm.expect(jsonData).to.have.property('origin');\r",
+							"    pm.expect(jsonData).to.have.property('location');\r",
+							"    pm.expect(jsonData).to.have.property('image');\r",
+							"    pm.expect(jsonData).to.have.property('episode');\r",
+							"    pm.expect(jsonData).to.have.property('url');\r",
+							"    pm.expect(jsonData).to.have.property('created');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://rickandmortyapi.com/api/character/146",
+					"protocol": "https",
+					"host": [
+						"rickandmortyapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"character",
+						"146"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apod",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with properties\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(jsonData).to.be.an('object').that.has.all.keys('copyright', 'date', 'explanation', 'hdurl', 'media_type', 'service_version', 'title', 'url');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "donki",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an array\", function () {\r",
+							"    pm.expect(pm.response.json()).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Each element in the array has the required properties\", function () {\r",
+							"    pm.response.json().forEach(function (cme) {\r",
+							"        pm.expect(cme).to.have.property('latitude');\r",
+							"        pm.expect(cme).to.have.property('longitude');\r",
+							"        pm.expect(cme).to.have.property('halfAngle');\r",
+							"        pm.expect(cme).to.have.property('speed');\r",
+							"        pm.expect(cme).to.have.property('type');\r",
+							"        pm.expect(cme).to.have.property('isMostAccurate');\r",
+							"        pm.expect(cme).to.have.property('associatedCMEID');\r",
+							"        pm.expect(cme).to.have.property('note');\r",
+							"        pm.expect(cme).to.have.property('catalog');\r",
+							"        pm.expect(cme).to.have.property('link');\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/DONKI/CMEAnalysis?startDate=2016-09-01&endDate=2016-09-30&mostAccurateOnly=true&speed=500&halfAngle=30&catalog=ALL&api_key=DEMO_KEY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"DONKI",
+						"CMEAnalysis"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2016-09-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2016-09-30"
+						},
+						{
+							"key": "mostAccurateOnly",
+							"value": "true"
+						},
+						{
+							"key": "speed",
+							"value": "500"
+						},
+						{
+							"key": "halfAngle",
+							"value": "30"
+						},
+						{
+							"key": "catalog",
+							"value": "ALL"
+						},
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weather",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with sol_keys and validity_checks properties\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response).to.be.an('object').that.has.all.keys('sol_keys', 'validity_checks');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validity_checks object has properties AT, HWS, PRE, WD\", function () {\r",
+							"    var validityChecks = pm.response.json().validity_checks;\r",
+							"    pm.expect(validityChecks).to.be.an('object').that.has.all.keys('AT', 'HWS', 'PRE', 'WD');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"insight_weather",
+						""
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						},
+						{
+							"key": "feedtype",
+							"value": "json"
+						},
+						{
+							"key": "ver",
+							"value": "1.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "neo negative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an object with error property\", function () {\r",
+							"    pm.expect(pm.response.json()).to.be.an('object').that.has.property('error');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Error code is not empty\", function () {\r",
+							"    var errorCode = pm.response.json().error.code;\r",
+							"    pm.expect(errorCode).to.exist.and.to.not.be.empty;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Error message is not empty\", function () {\r",
+							"    var errorMessage = pm.response.json().error.message;\r",
+							"    pm.expect(errorMessage).to.exist.and.to.not.be.empty;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-11-20&end_date=2023-11-20&api_key=API_KEY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"neo",
+						"rest",
+						"v1",
+						"feed"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2023-11-20"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-11-20"
+						},
+						{
+							"key": "api_key",
+							"value": "API_KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "neo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test to check if the response status code is 200\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Test to check if the response is an object with links, element_count, and near_earth_objects properties\r",
+							"pm.test(\"Response is an object with links, element_count, and near_earth_objects properties\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an('object').that.has.all.keys('links', 'element_count', 'near_earth_objects');\r",
+							"});\r",
+							"\r",
+							"// Test to check if the links property is an object with next, prev, and self properties\r",
+							"pm.test(\"links property is an object with next, prev, and self properties\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.links).to.be.an('object').that.has.all.keys('next', 'prev', 'self');\r",
+							"});\r",
+							"\r",
+							"// Test to check if the element_count property is a number\r",
+							"pm.test(\"element_count property is a number\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.element_count).to.be.a('number');\r",
+							"});\r",
+							"\r",
+							"// Test to check if the near_earth_objects property is an object\r",
+							"pm.test(\"near_earth_objects property is an object\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.near_earth_objects).to.be.an('object');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-11-20&end_date=2023-11-20&api_key=DEMO_KEY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"neo",
+						"rest",
+						"v1",
+						"feed"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2023-11-20"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-11-20"
+						},
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
