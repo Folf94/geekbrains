@@ -75,9 +75,9 @@
                     <parallel>all</parallel>
                     <perCoreThreadCount>true</perCoreThreadCount>
                     <includes>
-                        <include>NasaTest.java</include>
-                        <include>NumberTest.java</include>
-                        <include>RickAndMortyTest.java</include>
+                        <include>**/NasaTest.java</include>
+                        <include>**/NumberTest.java</include>
+                        <include>**/RickAndMortyTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
