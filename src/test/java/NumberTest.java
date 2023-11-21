@@ -2,9 +2,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.API.NumbersApi;
 import org.example.model.numbers.response.NumberResponse;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
@@ -14,7 +12,7 @@ import org.opentest4j.MultipleFailuresError;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Execution(ExecutionMode.CONCURRENT)
-public class NumberTests extends BaseTest {
+public class NumberTest extends BaseTest {
     private static ObjectMapper objectMapper = new ObjectMapper();
     public final NumbersApi NUMBER_API = new NumbersApi();
 

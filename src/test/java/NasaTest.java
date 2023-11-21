@@ -3,7 +3,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.API.NasaApi;
 import org.example.model.nasa.response.apod.ApodResponse;
 import org.example.model.nasa.response.donki.DonkiResponse;
-import org.example.model.nasa.response.donki.DonkiResponseItem;
 import org.example.model.nasa.response.neo.NeoResponse;
 import org.example.model.nasa.response.weather.WeatherResponse;
 import org.junit.jupiter.api.Assertions;
@@ -18,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Execution(ExecutionMode.CONCURRENT)
-public class NasaTests extends BaseTest {
+public class NasaTest extends BaseTest {
     private static ObjectMapper objectMapper = new ObjectMapper();
     public final NasaApi NASA_API = new NasaApi();
 

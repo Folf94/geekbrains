@@ -11,7 +11,7 @@ import org.opentest4j.MultipleFailuresError;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Execution(ExecutionMode.CONCURRENT)
-public class RickAndMortyTests extends BaseTest {
+public class RickAndMortyTest extends BaseTest {
     private static ObjectMapper objectMapper = new ObjectMapper();
     public final RickAndMortyApi RICK_AND_MORTY_API = new RickAndMortyApi();
 
